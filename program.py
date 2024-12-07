@@ -8,9 +8,15 @@ def main(*args):
     list2.sort()
     distance_list = []
 
-    for i in range(len(list1)):
-        distance_list.append(abs(list1[i] - list2[i]))
+    for index1, value1 in enumerate(list1):
+        count = 0
+        for index2, value2 in enumerate(list2):
+            if value1 == value2:
+                count += 1
+        distance_list.append(value1 * count)
+
     my_sum = 0
+
     for i in range(len(distance_list)):
         my_sum += distance_list[i]
 
